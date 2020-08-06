@@ -1,0 +1,34 @@
+{
+  "tab": "Patients",
+  "home": "Home",
+  "labels": {
+    "first": "First Name",
+    "last": "Last Name",
+    "email": "Email",
+    "country": {
+      "label": "Country",
+      "options": {
+        "select": "Select country...",
+        "canada": "Canada",
+        "usa": "USA"
+      }
+    },
+    "province": {
+      "label": "Province/State",
+      "options": {
+        "select": "Select province..."
+      }
+    },
+    "postalCode": "Postal/ZIP Code",
+    "lsp": "LSP",
+    "hsp": "HSP",
+    "addPatient": "Add patient"
+  },
+  "feedback": {
+    "first": "A first name is required",
+    "last": "A last name is required",
+    "country": "A country is required",
+    "province": "A province is required",
+    "postalCode": "A valid postal code is required"
+  }
+}

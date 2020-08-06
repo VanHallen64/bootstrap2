@@ -1,0 +1,34 @@
+{
+  "tab": "Pacientes",
+  "home": "Inicio",
+  "labels": {
+    "first": "Nombre",
+    "last": "Apellido",
+    "email": "Correo Electronico",
+    "country": {
+      "label": "Pais",
+      "options": {
+        "select": "Seleccionar pais...",
+        "canada": "Canada",
+        "usa": "Estados Unidos"
+      }
+    },
+    "province": {
+      "label": "Provincia/Estado",
+      "options": {
+        "select": "Seleccionar provincia..."
+      }
+    },
+    "postalCode": "Codigo Postal",
+    "lsp": "LSP",
+    "hsp": "HSP",
+    "addPatient": "Agregar paciente"
+  },
+  "feedback": {
+    "first": "Un nombre es requerido",
+    "last": "Un apellido es requerido",
+    "country": "Un pais es requerido",
+    "province": "Una provincia es requerida",
+    "postalCode": "Un codigo postal valido es requerido"
+  }
+}

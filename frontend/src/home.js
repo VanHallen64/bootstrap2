@@ -1,12 +1,15 @@
 import React, { Component } from 'react';
 
+import { withTranslation } from 'react-i18next';
+
 class Home extends Component {
 
   render() {
+    const { t } = this.props;
     return(
     <div>
       <div className="py-5 text-center">
-        <h2>Home</h2>
+        <h2>{t('home')}</h2>
       </div>
 
       <footer className="my-5 pt-5 text-muted text-center text-small">
@@ -17,4 +20,4 @@ class Home extends Component {
   }
 }
 
-export default Home;
+export default withTranslation()(Home);

@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 
+import { withTranslation } from 'react-i18next';
+
 class Patients extends Component {
   constructor(props) {
     super(props);
@@ -200,36 +202,36 @@ class Patients extends Component {
   }
 
   render() {
-    const { patients } = this.props;
+    const { patients, t } = this.props;
 
     return(
     <div>
       <div className="py-5 text-center">
-        <h2>Patients</h2>
+        <h2>{t('tab')}</h2>
       </div>
-
       <div className="row">
         <div className="col-md-12 order-md-1">
           <form onSubmit={this.handleSubmit} className={this.state.formclass} noValidate id="patientform">
             <div className="row">
                 <div className="col-lg-4 col-md-6 mb-3">
-                    <label htmlFor="firstName">First Name</label>
+                    
+                    <label htmlFor="firstName">{t('labels.first')}</label>
                     <input type="text" className="form-control" id="firstName"
                     value={this.state.firstName} required onChange={this.handleFirstNameChange} />
                     <div className="invalid-feedback">
-                        A first name is required.
+                      {t('feedback.first')}
                     </div>
                 </div>
                 <div className="col-lg-4 col-md-6 mb-3">
-                    <label htmlFor="lastName">Last Name</label>
+                    <label htmlFor="lastName">{t('labels.last')}</label>
                     <input type="text" className="form-control" id="lastName"
                     value={this.state.lastName} required onChange={this.handleLastNameChange} />
                     <div className="invalid-feedback">
-                        A last name is required.
+                      {t('feedback.last')}
                     </div>
                 </div>
                 <div className="col-lg-4 col-md-6 mb-3">
-                    <label htmlFor="email">Email</label>
+                    <label htmlFor="email">{t('labels.email')}</label>
                     <input type="text" className={this.state.emailClass} id="email"
                     value={this.state.email} required onChange={this.handleEmailChange} />
                     <div className="invalid-feedback">
@@ -237,37 +239,37 @@ class Patients extends Component {
                     </div>
                 </div>
                 <div className="col-lg-4 col-md-6 mb-3">
-                    <label htmlFor="country">Country</label>
+                    <label htmlFor="country">{t('labels.country.label')}</label>
                     <select className="form-control" id="country"
                     value={this.state.country} required onChange={this.handleCountryChange}>
-                        <option value="">Select country...</option>
-                        <option value="canada">Canada</option>
-                        <option value="usa">USA</option>
+                        <option value="">{t('labels.country.options.select')}</option>
+                        <option value="canada">{t('labels.country.options.canada')}</option>
+                        <option value="usa">{t('labels.country.options.usa')}</option>
                     </select>
                     <div className="invalid-feedback">
-                        A country is required.
+                      {t('feedback.country')}
                     </div>
                 </div>
                 <div className="col-lg-2 col-md-6 mb-3">
-                    <label htmlFor="province-state">Province/State</label>
+                    <label htmlFor="province-state">{t('labels.province.label')}</label>
                     <select className="form-control" id="province-state"
                     value={this.state.province} required onChange={this.handleProvinceChange}>
-                        <option value="">Select province...</option>
+                        <option value="">{t('labels.province.options.select')}</option>
                     </select>
                     <div className="invalid-feedback">
-                        A province is required.
+                      {t('feedback.province')}
                     </div>
                 </div>
                 <div className="col-lg-2 col-sm-6 mb-3">
-                    <label htmlFor="postalCode">Postal/ZIP Code</label>
+                    <label htmlFor="postalCode">{t('labels.postalCode')}</label>
                     <input type="text" className="form-control" id="postal-code" pattern={this.patternChooser(this.state.country)}
                     value={this.state.postalCode} required onChange={this.handlePostalCodeChange} />
                     <div className="invalid-feedback">
-                        A valid postal code is required
+                      {t('feedback.postalCode')}
                     </div>
                 </div>
                 <div className="col-lg-2 col-md-2 col-sm-6 mb-3">
-                    <label htmlFor="lowestSysPressure">LSP</label>
+                    <label htmlFor="lowestSysPressure">{t('labels.lsp')}</label>
                     <input type="number" className={this.state.lowestSysPressureClass} id="lowestSysPressure" max={this.state.highestSysPressure}
                     required onChange={this.handleLowestSysChange} />
                     <div className="invalid-feedback">
@@ -275,15 +277,15 @@ class Patients extends Component {
                     </div>
                 </div>
                 <div className="col-lg-2 col-md-2 col-sm-6 mb-3">
-                    <label htmlFor="highestSysPressure">HSP</label>
+                    <label htmlFor="highestSysPressure">{t('labels.hsp')}</label>
                     <input type="number" className={this.state.highestSysPressureClass} id="highestSysPressure" min={this.state.lowestSysPressure}
                     required onChange={this.handleHighestSysChange} />
                     <div className="invalid-feedback">
                         {this.state.highestSysPressureMessage}
                     </div>
-                </div>          
+                </div>
             </div>
-            <button className="btn btn-primary btn-lg btn-block" type="submit">Add patient</button>
+            <button className="btn btn-primary btn-lg btn-block" type="submit">{t('labels.addPatient')}</button>
           </form>
         </div>
       </div>
@@ -300,4 +302,4 @@ class Patients extends Component {
   }
 }
 
-export default Patients;
+export default withTranslation()(Patients);
